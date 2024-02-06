@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="./image/favicon.ico" type="image/x-icon" />
+</head>
+<body class="font-sans bg-background text-logo h-full">
+    <header>
+        <p class="font-bold font-tangerine italic text-5xl text-center pt-3 mb-8 mt-6">
+            Todo List
+        </p>
+    </header>
+    <main>
+        <div class="flex flex-col sm:flex-row justify-between">
+            <div class="flex-1 p-4 mr-4 ml-4 bg-light rounded-md mb-5 sm:mb-0">
+                <input type="text" 
+                    class="w-full bg-dark text-white p-3 mb-2 rounded-lg" 
+                    placeholder="Enter the task name">
+                <textarea rows="8" 
+                    class="w-full bg-dark text-white p-3 mb-2 rounded-lg" 
+                    placeholder="Enter the task description">
+                </textarea>
+                <div class="text-text p-3 text-center">
+                    <label for="task-priority" class="mb-2 md:mb-0">
+                        Priority:
+                    </label>
+                    <select name="task-priority" 
+                    onchange="changeColor(this)" 
+                    class="border border-text text-text p-2 bg-light rounded-lg mb-2 md:mb-0">
+                        <option value="Defaults">
+                            Change the priority
+                        </option>
+                        <option value="High">
+                            High
+                        </option>
+                        <option value="Medium">
+                            Medium
+                        </option>
+                        <option value="Low">
+                            Low 
+                        </option>
+                    </select>
+                    <button id="addTaskButton" 
+                    class="bg-light text-text p-2 rounded-lg border border-text hover:bg-dark mb-2 md:mb-0">
+                        Add Task
+                    </button>
+                </div>
+            </div>
+            <div class="flex-1 p-4 mr-4 ml-4 bg-light rounded-md mb-5 sm:mb-0">
+                <select name="filter" 
+                class="border border-text text-text p-2 bg-light rounded-lg float-right">
+                    <option value="all">
+                        To sort
+                    </option>
+                    <option value="high">
+                        High priority
+                    </option>
+                    <option value="medium">
+                        Medium priority
+                    </option>
+                    <option value="low">
+                        Low priority
+                    </option>
+                </select>
+                <div class="flex flex-col">
+                    <div class="w-full text-white p-3 mb-2 rounded-lg">
+                        <ul class="list text-text w-full text-white p-3 mb-2 rounded-lg">
+                    </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script type="module" src="./scripts/change-color.js"></script>
+<script type="module" src="./scripts/add-task.js"></script>
+<script type="module" src="./scripts/sort-task.js"></script>
+</html>
